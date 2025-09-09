@@ -1,54 +1,103 @@
-# Stock Crew
 
-Welcome to the Stock Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+# 🚀 AI Stock Market Agent with CrewAI
 
-## Installation
+An **AI-powered Stock Market Agent** that searches the internet for **trending companies** and recommends potential investments.
+Built with the **CrewAI framework**, the agent combines **Serper API, Gemini AI, and push notifications** to deliver real-time financial insights.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+---
 
-First, if you haven't already, install uv:
+## 🔑 Features
+
+* 🌐 **Web Search** – Uses **Serper API** to fetch the latest stock news & trends
+* 🧠 **AI Orchestration** – Built with **CrewAI** for structured agent workflows
+* 🤖 **LLM Backend** – Powered by **Gemini AI** for analysis & reasoning
+* 📲 **Push Notifications** – Sends stock picks directly to your phone
+* 📝 **Automated Reports** – Generates and stores reports of selected companies
+
+---
+
+## 🛠️ Tech Stack
+
+* [CrewAI](https://github.com/joaomdmoura/crewAI) – Framework for building AI agents
+* [Serper API](https://serper.dev/) – Google search API
+* [Gemini AI](https://deepmind.google/technologies/gemini/) – LLM provider
+* PushOver Notification Service – Sends stock alerts to mobile
+* Python
+
+---
+
+## ⚡ Installation
+
+1. **Clone the repository**
 
 ```bash
-pip install uv
+git clone https://github.com/your-username/ai-stock-agent.git
+cd ai-stock-agent
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/stock/config/agents.yaml` to define your agents
-- Modify `src/stock/config/tasks.yaml` to define your tasks
-- Modify `src/stock/crew.py` to add your own logic, tools and specific args
-- Modify `src/stock/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+2. **Create a virtual environment**
 
 ```bash
-$ crewai run
+python -m venv venv
+source venv/bin/activate   # On Windows use venv\Scripts\activate
 ```
 
-This command initializes the stock Crew, assembling the agents and assigning them tasks as defined in your configuration.
+3. **Install dependencies**
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+```bash
+pip install -r requirements.txt
+```
 
-## Understanding Your Crew
+4. **Set up environment variables**
+   Create a `.env` file in the project root:
 
-The stock Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+```ini
+SERPER_API_KEY=your_serper_api_key
+GEMINI_API_KEY=your_gemini_api_key
+PUSH_NOTIFICATION_KEY=your_push_service_key
+```
 
-## Support
+---
 
-For support, questions, or feedback regarding the Stock Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+## 🚀 Usage
 
-Let's create wonders together with the power and simplicity of crewAI.
+Run the agent:
+
+```bash
+python main.py
+```
+
+* The agent will search for trending companies
+* Analyze them using **Gemini AI**
+* Send a **push notification** with stock picks
+* Generate a **detailed report** saved locally
+
+---
+
+## 📊 Example Output
+
+* **Push Notification**:
+
+  > "📈 Top Pick: Reliance Industries – Strong momentum in renewable energy sector."
+
+
+
+---
+
+## 📌 Roadmap
+
+* [ ] Add support for multiple LLM providers
+* [ ] Enable scheduled stock checks
+* [ ] Build a simple web dashboard
+* [ ] Integrate with brokerage APIs for auto-trading
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to open an issue or submit a pull request.
+
+---
+
+
